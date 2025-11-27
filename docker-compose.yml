@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  backend:
+    build: ./backend
+    container_name: deploy_manager_backend
+    environment:
+      - PROJECTS_BASE=/proyectos
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./proyectos:/proyectos
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: deploy_manager_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: always
