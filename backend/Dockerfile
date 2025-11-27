@@ -16,14 +16,18 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
+# Copiar requirements e instalarlos
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copiar entrypoint primero y darle permisos
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
+# Copiar el resto del código
 COPY . /app
 
 ENV PROJECTS_BASE=/proyectos
 
-RUN chmod +x entrypoint.sh
-
 EXPOSE 5000
-CMD ["./entrypoint.sh"]
+CMD ["sh", "/app/entrypoint.sh"]
