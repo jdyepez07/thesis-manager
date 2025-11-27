@@ -30,4 +30,4 @@ COPY . /app
 ENV PROJECTS_BASE=/proyectos
 
 EXPOSE 5000
-CMD ["sh", "/app/entrypoint.sh"]
+CMD ["bash", "/app/entrypoint.sh"]

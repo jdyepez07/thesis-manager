@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 # entrypoint: instala dependencias si es que quieres, luego arranca gunicorn/Flask
-set -e
+set -euo pipefail
 # crear carpeta proyectos con permisos
 mkdir -p /app/proyectos
 chown -R nobody:nogroup /app/proyectos || true
