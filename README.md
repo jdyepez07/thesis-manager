@@ -31,7 +31,7 @@ Encargado de:
 
 * Recibir solicitudes de despliegue.
 
-*Clonar repositorios en una carpeta padre predefinida.
+* Clonar repositorios en una carpeta padre predefinida.
 
 * Ajustar puertos en archivos docker-compose.yml.
 
@@ -55,7 +55,7 @@ Dentro del servidor, existe un directorio padre (por ejemplo /proyectos/) donde:
 
 * Se almacenan los repos clonado por nombre.
 
-*Se ejecuta docker compose up usando rutas relativas.
+* Se ejecuta docker compose up usando rutas relativas.
 
 # Requisitos Previos
 
@@ -78,11 +78,9 @@ docker build -t gestor-tesis
 
 3. Ejecutar el contenedor.
 
-Ejecuta: docker compose up -d
+        Ejecuta: docker compose up -d
 
-El backend quedará disponible en:
-
-http://localhost:5000
+        El backend quedará disponible en http://localhost:5000
 
 ### Cómo Usar el Endpoint de Despliegue
 
@@ -90,11 +88,13 @@ El backend expone un único endpoint principal:
 
 POST /desplegar
 Ejemplo del cuerpo JSON:
+```
 {
   "nombre": "mi_proyecto",
   "link": "https://github.com/usuario/repo.git",
   "puerto": 7000
 }
+```
 
 ### ¿Qué sucede internamente?
 
