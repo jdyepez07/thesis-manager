@@ -25,7 +25,7 @@ Este sistema permite:
 
 El sistema se compone de:
 
-1. Backend (Flask)
+### Backend (Flask)
 
 Encargado de:
 
@@ -39,7 +39,7 @@ Encargado de:
 
 * Mantener logs y reportar errores al usuario.
 
-2. Entorno Docker
+### Entorno Docker
 
 El backend corre dentro de un contenedor Docker, lo que permite:
 
@@ -49,7 +49,7 @@ El backend corre dentro de un contenedor Docker, lo que permite:
 
 * Gestión homogénea de dependencias.
 
-3. Carpeta de Proyectos
+### Carpeta de Proyectos
 
 Dentro del servidor, existe un directorio padre (por ejemplo /proyectos/) donde:
 
