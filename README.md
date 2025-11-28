@@ -117,6 +117,7 @@ docker build -t mi_proyecto-image .
 docker run -d -p 7000:5006 --name mi_proyecto-container mi_proyecto-image
 
 Estructura de Carpetas Esperada
+```
 /gestor-tesis/
     ├── backend/
     ├── frontend/
@@ -127,6 +128,7 @@ Estructura de Carpetas Esperada
         ├── proyectoA/
         ├── proyectoB/
         └── proyectoC/
+````
 
 Logs
 
