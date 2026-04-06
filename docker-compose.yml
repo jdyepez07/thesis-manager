@@ -17,7 +17,7 @@ services:
       context: ./frontend
     container_name: deploy_manager_frontend
     ports:
-      - "3000:3000"
+      - "3000:80"
     depends_on:
       - backend
     restart: always
