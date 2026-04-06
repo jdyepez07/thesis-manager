@@ -1,6 +1,5 @@
 FROM python:3.11-slim
 
-# Instalar git, curl, docker-cli y dependencias
 RUN apt-get update && apt-get install -y \
     git \
     curl \
@@ -16,15 +15,12 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-# Copiar requirements e instalarlos
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar entrypoint primero y darle permisos
 COPY entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
-# Copiar el resto del código
 COPY . /app
 
 ENV PROJECTS_BASE=/proyectos

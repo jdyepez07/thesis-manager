@@ -1,360 +1,456 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
+<html class="dark" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Thesis Deploy Manager</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-primary": "#003642",
-                    "tertiary-fixed-dim": "#ffba3d",
-                    "surface-dim": "#111125",
-                    "tertiary-fixed": "#ffdeae",
-                    "on-secondary": "#003642",
-                    "primary-container": "#00d4ff",
-                    "inverse-primary": "#00677e",
-                    "secondary-fixed": "#b7ebfd",
-                    "surface-variant": "#333348",
-                    "on-primary-fixed-variant": "#004e5f",
-                    "on-secondary-container": "#8dc0d2",
-                    "surface-container": "#1e1e32",
-                    "on-secondary-fixed": "#001f27",
-                    "inverse-surface": "#e2e0fc",
-                    "surface-container-high": "#28283d",
-                    "on-error": "#690005",
-                    "on-tertiary": "#432c00",
-                    "on-error-container": "#ffdad6",
-                    "on-surface": "#e2e0fc",
-                    "surface-container-lowest": "#0c0c1f",
-                    "tertiary-container": "#feb528",
-                    "outline-variant": "#3c494e",
-                    "primary": "#a8e8ff",
-                    "on-primary-container": "#00586b",
-                    "on-tertiary-fixed": "#281900",
-                    "secondary-container": "#174f5f",
-                    "surface-container-highest": "#333348",
-                    "on-secondary-fixed-variant": "#144d5c",
-                    "error": "#ffb4ab",
-                    "outline": "#859398",
-                    "on-primary-fixed": "#001f27",
-                    "background": "#111125",
-                    "on-background": "#e2e0fc",
-                    "inverse-on-surface": "#2f2e43",
-                    "surface-container-low": "#1a1a2e",
-                    "error-container": "#93000a",
-                    "secondary": "#9bcee1",
-                    "on-tertiary-fixed-variant": "#604100",
-                    "surface-tint": "#3cd7ff",
-                    "on-surface-variant": "#bbc9cf",
-                    "primary-fixed-dim": "#3cd7ff",
-                    "surface": "#111125",
-                    "tertiary": "#ffd9a1",
-                    "surface-bright": "#37374d",
-                    "primary-fixed": "#b4ebff",
-                    "secondary-fixed-dim": "#9bcee1",
-                    "on-tertiary-container": "#6c4900"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "fontFamily": {
-                    "headline": ["Space Grotesk"],
-                    "body": ["Inter"],
-                    "label": ["Space Grotesk"]
-            }
-          },
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-primary": "#003642",
+          "tertiary-fixed-dim": "#ffba3d",
+          "surface-dim": "#111125",
+          "tertiary-fixed": "#ffdeae",
+          "on-secondary": "#003642",
+          "primary-container": "#00d4ff",
+          "inverse-primary": "#00677e",
+          "secondary-fixed": "#b7ebfd",
+          "surface-variant": "#333348",
+          "on-primary-fixed-variant": "#004e5f",
+          "on-secondary-container": "#8dc0d2",
+          "surface-container": "#1e1e32",
+          "on-secondary-fixed": "#001f27",
+          "inverse-surface": "#e2e0fc",
+          "surface-container-high": "#28283d",
+          "on-error": "#690005",
+          "on-tertiary": "#432c00",
+          "on-error-container": "#ffdad6",
+          "on-surface": "#e2e0fc",
+          "surface-container-lowest": "#0c0c1f",
+          "tertiary-container": "#feb528",
+          "outline-variant": "#3c494e",
+          "primary": "#a8e8ff",
+          "on-primary-container": "#00586b",
+          "on-tertiary-fixed": "#281900",
+          "secondary-container": "#174f5f",
+          "surface-container-highest": "#333348",
+          "on-secondary-fixed-variant": "#144d5c",
+          "error": "#ffb4ab",
+          "outline": "#859398",
+          "on-primary-fixed": "#001f27",
+          "background": "#111125",
+          "on-background": "#e2e0fc",
+          "inverse-on-surface": "#2f2e43",
+          "surface-container-low": "#1a1a2e",
+          "error-container": "#93000a",
+          "secondary": "#9bcee1",
+          "on-tertiary-fixed-variant": "#604100",
+          "surface-tint": "#3cd7ff",
+          "on-surface-variant": "#bbc9cf",
+          "primary-fixed-dim": "#3cd7ff",
+          "surface": "#111125",
+          "tertiary": "#ffd9a1",
+          "surface-bright": "#37374d",
+          "primary-fixed": "#b4ebff",
+          "secondary-fixed-dim": "#9bcee1",
+          "on-tertiary-container": "#6c4900"
         },
+        borderRadius: {
+          DEFAULT: "0.125rem",
+          lg: "0.25rem",
+          xl: "0.5rem",
+          full: "0.75rem"
+        },
+        fontFamily: {
+          headline: ["Space Grotesk"],
+          body: ["Inter"],
+          label: ["Space Grotesk"]
+        }
       }
-    </script>
+    }
+  }
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        body {
-            background-color: #111125;
-            color: #e2e0fc;
-            font-family: 'Inter', sans-serif;
-        }
-        .font-space { font-family: 'Space Grotesk', sans-serif; }
-    </style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  body {
+    background-color: #111125;
+    color: #e2e0fc;
+    font-family: 'Inter', sans-serif;
+  }
+  .font-space { font-family: 'Space Grotesk', sans-serif; }
+</style>
 </head>
+
 <body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopAppBar -->
+
+<!-- Top bar -->
 <header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#1a1a2e] shadow-[0_20px_40px_rgba(0,212,255,0.08)]">
-<div class="flex items-center gap-4">
-<span class="text-xl font-bold tracking-tighter text-[#e2e0fc] font-['Space_Grotesk']">Thesis Deploy Manager</span>
-</div>
-<div class="flex items-center gap-4">
-<button class="p-2 text-[#bbc9cf] hover:bg-[#37374d] transition-colors rounded-lg">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button class="p-2 text-[#bbc9cf] hover:bg-[#37374d] transition-colors rounded-lg">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-</button>
-<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
-<img alt="Professor Profile Avatar" data-alt="close up professional portrait of an academic professor with glasses and a friendly expression in a modern study environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu32r8b4ooznxN6Wj7qhltT5Arz84JIimmZ_YBQatNgZFq5yinV8LyNkQ2rdRaPgjE5e8pOBdmuquqO2d7QAW86sCSv_fbZLMnccqJ4-pm6DpB08AYzlv806z4zi3_rpLatZYxn1GGLVrgzBIrdM1YJqfBMa5Cyj25V8-5saMvcGdWeYom3gFbXznMLJxc8FwAujmruUXe4kN7XYc1WTY0tDFuD_sze4iS6PmwS1ETHELd9zAIfhUMFc8eBRpa2Thy82Uo0jEnxVPz"/>
-</div>
-</div>
+  <div class="flex items-center gap-4">
+    <span class="text-xl font-bold tracking-tighter text-[#e2e0fc] font-['Space_Grotesk']">Thesis Deploy Manager</span>
+  </div>
+  <div class="flex items-center gap-4">
+    <button class="p-2 text-[#bbc9cf] hover:bg-[#37374d] transition-colors rounded-lg">
+      <span class="material-symbols-outlined">notifications</span>
+    </button>
+    <button class="p-2 text-[#bbc9cf] hover:bg-[#37374d] transition-colors rounded-lg">
+      <span class="material-symbols-outlined">settings</span>
+    </button>
+  </div>
 </header>
-<!-- SideNavBar -->
+
+<!-- Sidebar -->
 <aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-[#1a1a2e] flex flex-col pt-8 hidden md:flex">
-<nav class="flex-1 space-y-1 px-4">
-<a class="flex items-center gap-3 px-4 py-3 text-[#00d4ff] border-l-4 border-[#00d4ff] bg-[#1e1e32] font-['Space_Grotesk'] text-sm font-medium" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span>Dashboard</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-[#bbc9cf] hover:bg-[#37374d] transition-all duration-300 font-['Space_Grotesk'] text-sm font-medium" href="#">
-<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
-<span>Projects</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-[#bbc9cf] hover:bg-[#37374d] transition-all duration-300 font-['Space_Grotesk'] text-sm font-medium" href="#">
-<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
-<span>Logs</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-[#bbc9cf] hover:bg-[#37374d] transition-all duration-300 font-['Space_Grotesk'] text-sm font-medium" href="#">
-<span class="material-symbols-outlined" data-icon="tune">tune</span>
-<span>Settings</span>
-</a>
-</nav>
-<div class="p-4 mt-auto space-y-1 border-t border-outline-variant/10">
-<a class="flex items-center gap-3 px-4 py-3 text-[#bbc9cf] hover:bg-[#37374d] transition-all duration-300 font-['Space_Grotesk'] text-sm font-medium" href="#">
-<span class="material-symbols-outlined" data-icon="help">help</span>
-<span>Help</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-[#bbc9cf] hover:bg-[#37374d] transition-all duration-300 font-['Space_Grotesk'] text-sm font-medium" href="#">
-<span class="material-symbols-outlined" data-icon="logout">logout</span>
-<span>Logout</span>
-</a>
-</div>
+  <nav class="flex-1 space-y-1 px-4">
+    <a class="flex items-center gap-3 px-4 py-3 text-[#00d4ff] border-l-4 border-[#00d4ff] bg-[#1e1e32] font-['Space_Grotesk'] text-sm font-medium" href="#">
+      <span class="material-symbols-outlined">dashboard</span>
+      <span>Dashboard</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-[#bbc9cf] hover:bg-[#37374d] transition-all font-['Space_Grotesk'] text-sm font-medium" href="#">
+      <span class="material-symbols-outlined">rocket_launch</span>
+      <span>Projects</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-[#bbc9cf] hover:bg-[#37374d] transition-all font-['Space_Grotesk'] text-sm font-medium" href="#">
+      <span class="material-symbols-outlined">terminal</span>
+      <span>Logs</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-[#bbc9cf] hover:bg-[#37374d] transition-all font-['Space_Grotesk'] text-sm font-medium" href="#">
+      <span class="material-symbols-outlined">tune</span>
+      <span>Settings</span>
+    </a>
+  </nav>
+  <div class="p-4 mt-auto space-y-1 border-t border-outline-variant/10">
+    <a class="flex items-center gap-3 px-4 py-3 text-[#bbc9cf] hover:bg-[#37374d] transition-all font-['Space_Grotesk'] text-sm font-medium" href="#">
+      <span class="material-symbols-outlined">help</span>
+      <span>Help</span>
+    </a>
+  </div>
 </aside>
-<!-- Main Content -->
+
+<!-- Main -->
 <main class="md:ml-64 pt-24 pb-12 px-8 min-h-screen">
-<div class="max-w-6xl mx-auto space-y-8">
-<!-- Notification Banner (Dynamic) -->
-<div class="hidden rounded-lg p-4 flex items-center justify-between transition-all duration-300" id="status-banner">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined" id="status-icon">info</span>
-<span class="font-medium font-space" id="status-message"></span>
-</div>
-<div class="flex gap-2" id="status-actions"></div>
-</div>
-<!-- 1. Deploy Form Section -->
-<section class="bg-surface-container-low rounded-xl p-8 shadow-2xl relative overflow-hidden">
-<div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
-<h2 class="text-2xl font-bold font-space text-on-surface mb-6 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container">add_to_drive</span>
-                    New Deployment
-                </h2>
-<form class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end" id="deploy-form">
-<div class="md:col-span-4 space-y-2">
-<label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant font-space">Project Name</label>
-<input class="w-full bg-surface-container-lowest border-none focus:ring-0 text-on-surface p-3 rounded-lg border-b-2 border-transparent focus:border-primary-container transition-all" id="project-name" placeholder="e.g. thesis-backend" required="" type="text"/>
-</div>
-<div class="md:col-span-4 space-y-2">
-<label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant font-space">GitHub Repository URL</label>
-<input class="w-full bg-surface-container-lowest border-none focus:ring-0 text-on-surface p-3 rounded-lg border-b-2 border-transparent focus:border-primary-container transition-all" id="repo-url" placeholder="https://github.com/user/repo" required="" type="url"/>
-</div>
-<div class="md:col-span-2 space-y-2">
-<label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant font-space">Host Port</label>
-<input class="w-full bg-surface-container-lowest border-none focus:ring-0 text-on-surface p-3 rounded-lg border-b-2 border-transparent focus:border-primary-container transition-all" id="host-port" type="number" value="8080"/>
-</div>
-<div class="md:col-span-2">
-<button class="w-full h-[46px] bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold font-space rounded-lg hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-primary-container/20" type="submit">
-                            Deploy
-                        </button>
-</div>
-</form>
-</section>
-<!-- 2. Active Projects Section -->
-<section class="bg-surface-container-low rounded-xl overflow-hidden shadow-2xl">
-<div class="p-6 flex justify-between items-center bg-surface-container">
-<h2 class="text-xl font-bold font-space text-on-surface flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container">dns</span>
-                        Container Cluster
-                    </h2>
-<span class="text-xs font-mono text-on-surface-variant bg-surface-container-high px-3 py-1 rounded-full" id="refresh-timestamp">Last updated: Never</span>
-</div>
-<div class="overflow-x-auto">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="bg-surface-container-lowest/50 border-b border-outline-variant/10">
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant font-space">Name</th>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant font-space">Image/Source</th>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant font-space">Status</th>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant font-space">Ports</th>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant font-space text-right">Actions</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-outline-variant/5" id="projects-table-body">
-<!-- Table rows will be injected here -->
-<tr class="animate-pulse">
-<td class="px-6 py-12 text-center text-on-surface-variant font-space" colspan="5">Loading active deployments...</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-</div>
+  <div class="max-w-6xl mx-auto space-y-8">
+
+    <!-- Status banner -->
+    <div class="hidden rounded-lg p-4 flex items-center justify-between transition-all duration-300" id="status-banner">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined" id="status-icon">info</span>
+        <span class="font-medium font-space" id="status-message"></span>
+      </div>
+      <div class="flex gap-2" id="status-actions"></div>
+    </div>
+
+    <!-- Deploy form -->
+    <section class="bg-surface-container-low rounded-xl p-8 shadow-2xl relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
+      <h2 class="text-2xl font-bold font-space text-on-surface mb-6 flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary-container">add_to_drive</span>
+        New Deployment
+      </h2>
+      <form class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end" id="deploy-form">
+        <div class="md:col-span-4 space-y-2">
+          <label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant font-space">Project Name</label>
+          <input class="w-full bg-surface-container-lowest border-none focus:ring-0 text-on-surface p-3 rounded-lg border-b-2 border-transparent focus:border-primary-container transition-all" id="project-name" placeholder="e.g. thesis-backend" required type="text"/>
+        </div>
+        <div class="md:col-span-4 space-y-2">
+          <label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant font-space">GitHub Repository URL</label>
+          <input class="w-full bg-surface-container-lowest border-none focus:ring-0 text-on-surface p-3 rounded-lg border-b-2 border-transparent focus:border-primary-container transition-all" id="repo-url" placeholder="https://github.com/user/repo" required type="url"/>
+        </div>
+        <div class="md:col-span-2 space-y-2">
+          <label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant font-space">Host Port</label>
+          <input class="w-full bg-surface-container-lowest border-none focus:ring-0 text-on-surface p-3 rounded-lg border-b-2 border-transparent focus:border-primary-container transition-all" id="host-port" type="number" value="8080"/>
+        </div>
+        <div class="md:col-span-2">
+          <button class="w-full h-[46px] bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold font-space rounded-lg hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-primary-container/20" type="submit">
+            Deploy
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Projects table -->
+    <section class="bg-surface-container-low rounded-xl overflow-hidden shadow-2xl">
+      <div class="p-6 flex justify-between items-center bg-surface-container">
+        <h2 class="text-xl font-bold font-space text-on-surface flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary-container">dns</span>
+          Active Deployments
+        </h2>
+        <span class="text-xs font-mono text-on-surface-variant bg-surface-container-high px-3 py-1 rounded-full" id="refresh-timestamp">Last updated: Never</span>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-surface-container-lowest/50 border-b border-outline-variant/10">
+              <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant font-space">Name</th>
+              <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant font-space">Mode</th>
+              <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant font-space">Status</th>
+              <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant font-space">Port</th>
+              <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant font-space text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-outline-variant/5" id="projects-table-body">
+            <tr class="animate-pulse">
+              <td class="px-6 py-12 text-center text-on-surface-variant font-space" colspan="5">Loading active deployments...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
 </main>
+
 <script>
-        const API_BASE = "http://localhost:5000";
-        const form = document.getElementById('deploy-form');
-        const banner = document.getElementById('status-banner');
-        const bannerMsg = document.getElementById('status-message');
-        const bannerIcon = document.getElementById('status-icon');
-        const bannerActions = document.getElementById('status-actions');
-        const tableBody = document.getElementById('projects-table-body');
-        const refreshTime = document.getElementById('refresh-timestamp');
+  const API_BASE = "http://localhost:5000";
 
-        let pollingInterval = null;
+  const form        = document.getElementById("deploy-form");
+  const banner      = document.getElementById("status-banner");
+  const bannerMsg   = document.getElementById("status-message");
+  const bannerIcon  = document.getElementById("status-icon");
+  const bannerActions = document.getElementById("status-actions");
+  const tableBody   = document.getElementById("projects-table-body");
+  const refreshTime = document.getElementById("refresh-timestamp");
 
-        // Fetch List on Mount
-        window.addEventListener('DOMContentLoaded', () => {
-            fetchProjects();
-            setInterval(fetchProjects, 10000); // Periodic refresh
-        });
+  let pollingInterval = null;
 
-        // Form Submit Handler
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const name = document.getElementById('project-name').value;
-            const repo = document.getElementById('repo-url').value;
-            const port = document.getElementById('host-port').value;
+  // ── Bootstrap ──────────────────────────────────────────────────────────────
 
-            showBanner('Building and starting container, please wait...', 'warning');
+  window.addEventListener("DOMContentLoaded", () => {
+    fetchProjects();
+    setInterval(fetchProjects, 10000);
+  });
 
-            try {
-                const response = await fetch(`${API_BASE}/desplegar`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ nombre: name, link: repo, puerto: port })
-                });
+  // ── Deploy form ────────────────────────────────────────────────────────────
 
-                if (response.ok) {
-                    startPolling(name, port);
-                } else {
-                    showBanner(`Deployment failed to initiate.`, 'error');
-                }
-            } catch (err) {
-                showBanner(`Error: ${err.message}`, 'error');
-            }
-        });
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-        async function fetchProjects() {
-            try {
-                const res = await fetch(`${API_BASE}/list`);
-                const data = await res.json();
-                renderTable(data.containers || []);
-                refreshTime.innerText = `Last updated: ${new Date().toLocaleTimeString()}`;
-            } catch (err) {
-                console.error("List fetch error:", err);
-            }
+    const name = document.getElementById("project-name").value.trim();
+    const repo = document.getElementById("repo-url").value.trim();
+    const port = document.getElementById("host-port").value;
+
+    showBanner("Building and starting container, please wait…", "warning");
+
+    try {
+      const res = await fetch(`${API_BASE}/desplegar`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre: name, link: repo, puerto: parseInt(port, 10) }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        // Use the port returned by the server (may differ if auto-assigned)
+        startPolling(name, data.port || port);
+      } else {
+        showBanner(data.error || "Deployment failed to initiate.", "error");
+      }
+    } catch (err) {
+      showBanner(`Network error: ${err.message}`, "error");
+    }
+  });
+
+  // ── Project list ───────────────────────────────────────────────────────────
+
+  async function fetchProjects() {
+    try {
+      const res  = await fetch(`${API_BASE}/list`);
+      const data = await res.json();
+      // New API returns { proyectos: [...], total: N }
+      renderTable(data.proyectos || []);
+      refreshTime.innerText = `Last updated: ${new Date().toLocaleTimeString()}`;
+    } catch (err) {
+      console.error("List fetch error:", err);
+    }
+  }
+
+  /**
+   * Renders one row per project using the new API shape:
+   *   { nombre, mode, puerto, url, link, containers: [...] }
+   *
+   * Container status is derived from the nested containers array.
+   * Each container follows docker ps --format json fields (Status, State, etc.).
+   */
+  function renderTable(projects) {
+    if (!projects || projects.length === 0) {
+      tableBody.innerHTML = `<tr><td colspan="5" class="px-6 py-12 text-center text-on-surface-variant font-space">No active deployments found.</td></tr>`;
+      return;
+    }
+
+    tableBody.innerHTML = projects.map((p) => {
+      const isRunning   = isProjectRunning(p.containers);
+      const statusLabel = deriveStatusLabel(p.containers);
+      const statusColor = isRunning
+        ? "bg-primary-container/20 text-primary-container"
+        : "bg-error/20 text-error";
+      const statusDot   = isRunning ? "bg-primary-container" : "bg-error";
+
+      const openBtn = isRunning && p.url
+        ? `<button onclick="window.open('${p.url}', '_blank')" class="p-2 rounded hover:bg-primary-container/10 text-primary-container transition-colors" title="Open project">
+             <span class="material-symbols-outlined">open_in_new</span>
+           </button>`
+        : "";
+
+      const logsBtn = `<button onclick="openLogs('${p.nombre}')" class="p-2 rounded hover:bg-surface-variant/40 text-on-surface-variant transition-colors" title="View build logs">
+        <span class="material-symbols-outlined">terminal</span>
+      </button>`;
+
+      return `
+        <tr class="hover:bg-surface-bright/5 transition-colors">
+          <td class="px-6 py-5">
+            <div class="font-bold text-on-surface font-space">${p.nombre}</div>
+            <div class="text-[10px] text-on-surface-variant font-mono uppercase opacity-50">${p.link || ""}</div>
+          </td>
+          <td class="px-6 py-5 text-sm text-on-surface-variant font-mono">${p.mode || "—"}</td>
+          <td class="px-6 py-5">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold font-space ${statusColor}">
+              <span class="w-1.5 h-1.5 rounded-full ${statusDot}"></span>
+              ${statusLabel}
+            </span>
+          </td>
+          <td class="px-6 py-5 text-sm font-mono text-secondary">${p.puerto || "—"}</td>
+          <td class="px-6 py-5 text-right space-x-2">
+            ${openBtn}
+            ${logsBtn}
+            <button onclick="stopProject('${p.nombre}')" class="p-2 rounded hover:bg-error/10 text-error transition-colors" title="Stop project">
+              <span class="material-symbols-outlined">stop_circle</span>
+            </button>
+          </td>
+        </tr>
+      `;
+    }).join("");
+  }
+
+  // ── Actions ────────────────────────────────────────────────────────────────
+
+  async function stopProject(name) {
+    try {
+      const res  = await fetch(`${API_BASE}/stop`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre: name }),
+      });
+      const data = await res.json();
+      showBanner(data.message || data.error || "Done.", res.ok ? "success" : "error");
+      fetchProjects();
+    } catch (err) {
+      console.error("Stop error:", err);
+    }
+  }
+
+  async function openLogs(name) {
+    try {
+      const res  = await fetch(`${API_BASE}/logs?nombre=${encodeURIComponent(name)}&lineas=60`);
+      const data = await res.json();
+      if (res.ok) {
+        showBanner(`Logs for '${name}' — check the browser console for the full output.`, "warning");
+        console.group(`Build logs — ${name}`);
+        console.log(data.log);
+        console.groupEnd();
+      } else {
+        showBanner(data.error || "Could not fetch logs.", "error");
+      }
+    } catch (err) {
+      console.error("Logs error:", err);
+    }
+  }
+
+  // ── Deployment polling ─────────────────────────────────────────────────────
+
+  /**
+   * Polls /status every 5 s until the container reports "Up" or an error.
+   * Uses the port returned by /desplegar so the "Open Project" link is correct
+   * even when the backend auto-assigned a port.
+   */
+  function startPolling(name, port) {
+    if (pollingInterval) clearInterval(pollingInterval);
+
+    pollingInterval = setInterval(async () => {
+      try {
+        const res  = await fetch(`${API_BASE}/status?nombre=${encodeURIComponent(name)}`);
+        const data = await res.json();
+
+        const running = isProjectRunning(data.containers || []);
+        const crashed = hasCrashedContainer(data.containers || []);
+
+        if (running) {
+          clearInterval(pollingInterval);
+          showBanner("Deployment successful! Container is running.", "success");
+          bannerActions.innerHTML = `
+            <a href="${data.url || `http://localhost:${port}`}" target="_blank"
+               class="bg-on-primary-container text-primary-container px-4 py-1 rounded font-bold text-sm font-space">
+              Open Project
+            </a>`;
+          fetchProjects();
+        } else if (crashed) {
+          clearInterval(pollingInterval);
+          showBanner("Container exited after startup. Check the build logs.", "error");
+          fetchProjects();
         }
+      } catch (err) {
+        console.error("Polling error:", err);
+      }
+    }, 5000);
+  }
 
-        function renderTable(projects) {
-            if (!projects || projects.length === 0) {
-                tableBody.innerHTML = `<tr><td colspan="5" class="px-6 py-12 text-center text-on-surface-variant font-space">No active deployments found.</td></tr>`;
-                return;
-            }
+  // ── Helpers ────────────────────────────────────────────────────────────────
 
-            tableBody.innerHTML = projects.map(p => {
-                const isRunning = (p.Status || '').toLowerCase().includes('up');
-                const statusColor = isRunning ? 'bg-primary-container/20 text-primary-container' : 'bg-error/20 text-error';
-                const statusDot = isRunning ? 'bg-primary-container' : 'bg-error';
-                
-                return `
-                    <tr class="hover:bg-surface-bright/5 transition-colors group">
-                        <td class="px-6 py-5">
-                            <div class="font-bold text-on-surface font-space">${p.Names || 'N/A'}</div>
-                            <div class="text-[10px] text-on-surface-variant font-mono uppercase opacity-50">ID: ${p.ID || 'N/A'}</div>
-                        </td>
-                        <td class="px-6 py-5 text-sm text-on-surface-variant font-mono">${p.Image || ''}</td>
-                        <td class="px-6 py-5">
-                            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold font-space ${statusColor}">
-                                <span class="w-1.5 h-1.5 rounded-full ${statusDot}"></span>
-                                ${p.Status || ''}
-                            </span>
-                        </td>
-                        <td class="px-6 py-5 text-sm font-mono text-secondary">${p.Ports || ''}</td>
-                        <td class="px-6 py-5 text-right space-x-2">
-                            ${isRunning ? `<button onclick="window.open('http://localhost:${extractPort(p.Ports || '')}', '_blank')" class="p-2 rounded hover:bg-primary-container/10 text-primary-container transition-colors"><span class="material-symbols-outlined">open_in_new</span></button>` : ''}
-                            <button onclick="stopProject('${p.Names || ''}')" class="p-2 rounded hover:bg-error/10 text-error transition-colors"><span class="material-symbols-outlined">stop_circle</span></button>
-                        </td>
-                    </tr>
-                `;
-            }).join('');
-        }
+  /**
+   * Returns true if at least one container in the list has an "Up" status.
+   * Works for both docker compose ps and docker ps JSON output.
+   */
+  function isProjectRunning(containers) {
+    if (!containers || containers.length === 0) return false;
+    return containers.some((c) => {
+      const status = (c.Status || c.State || "").toLowerCase();
+      return status.includes("up") || status === "running";
+    });
+  }
 
-        async function stopProject(name) {
-            try {
-                await fetch(`${API_BASE}/stop`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ nombre: name })
-                });
-                fetchProjects();
-            } catch (err) {
-                console.error("Stop error:", err);
-            }
-        }
+  function hasCrashedContainer(containers) {
+    if (!containers || containers.length === 0) return false;
+    return containers.some((c) => {
+      const status = (c.Status || c.State || "").toLowerCase();
+      return status.includes("exited") || status.includes("error");
+    });
+  }
 
-        function extractPort(portStr) {
-            const match = portStr.match(/:(\d+)->/);
-            return match ? match[1] : '8080';
-        }
+  /**
+   * Derives a single human-readable label from the containers array.
+   * Falls back to "Unknown" when there is no container data yet.
+   */
+  function deriveStatusLabel(containers) {
+    if (!containers || containers.length === 0) return "Starting…";
+    if (isProjectRunning(containers))           return "Running";
+    if (hasCrashedContainer(containers))        return "Stopped";
+    return containers[0]?.Status || containers[0]?.State || "Unknown";
+  }
 
-        function showBanner(msg, type) {
-            banner.classList.remove('hidden', 'bg-tertiary-container', 'bg-primary-container', 'bg-error-container');
-            bannerActions.innerHTML = '';
-            bannerMsg.innerText = msg;
-            
-            if (type === 'warning') {
-                banner.classList.add('bg-tertiary-container', 'text-on-tertiary-container');
-                bannerIcon.innerText = 'hourglass_empty';
-            } else if (type === 'success') {
-                banner.classList.add('bg-primary-container', 'text-on-primary-container');
-                bannerIcon.innerText = 'check_circle';
-            } else {
-                banner.classList.add('bg-error-container', 'text-on-error');
-                bannerIcon.innerText = 'error';
-            }
-        }
+  function showBanner(msg, type) {
+    banner.classList.remove("hidden", "bg-tertiary-container", "bg-primary-container", "bg-error-container");
+    bannerActions.innerHTML = "";
+    bannerMsg.innerText     = msg;
 
-        function startPolling(name, port) {
-            if (pollingInterval) clearInterval(pollingInterval);
-            
-            pollingInterval = setInterval(async () => {
-                try {
-                    const res = await fetch(`${API_BASE}/status?nombre=${name}`);
-                    const data = await res.json();
-                    
-                    const text = JSON.stringify(data);
-                    if (text.includes('Up')) {
-                        clearInterval(pollingInterval);
-                        showBanner('Deployment Successful! Container is running.', 'success');
-                        bannerActions.innerHTML = `<a href="http://localhost:${port}" target="_blank" class="bg-on-primary-container text-primary-container px-4 py-1 rounded font-bold text-sm font-space">Open Project</a>`;
-                        fetchProjects();
-                    } else if (text.includes('Exited') || text.includes('Error')) {
-                        clearInterval(pollingInterval);
-                        showBanner('Container crashed or exited after startup.', 'error');
-                        fetchProjects();
-                    }
-                } catch (err) {
-                    console.error("Polling error:", err);
-                }
-            }, 5000);
-        }
-    </script>
-</body></html>
+    if (type === "warning") {
+      banner.classList.add("bg-tertiary-container", "text-on-tertiary-container");
+      bannerIcon.innerText = "hourglass_empty";
+    } else if (type === "success") {
+      banner.classList.add("bg-primary-container", "text-on-primary-container");
+      bannerIcon.innerText = "check_circle";
+    } else {
+      banner.classList.add("bg-error-container", "text-on-error");
+      bannerIcon.innerText = "error";
+    }
+  }
+</script>
+
+</body>
+</html>
