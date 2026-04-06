@@ -6,6 +6,8 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=False)
+
 @app.after_request
 def add_cors_headers(response):
     response.headers["Access-Control-Allow-Origin"] = "*"
